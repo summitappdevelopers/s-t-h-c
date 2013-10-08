@@ -1,0 +1,86 @@
+/*
+Created by Ajay Ramesh, 2013
+Last revision 9/21/13
+All of this code is mine, don't take it...or else.
+*/
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	background-image:url('images/grey-noise.png');
+	text-align: center;
+	overflow: auto;
+}
+/* HEADER */
+
+#header_title{
+	font-family: Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+	font-weight: 300;
+	font-size: 2.5em;
+	color: white;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+#header_title:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 2.5em;
+	color: #DCDCDC;
+	margin-left: 10px;
+	cursor: pointer;	
+}
+
+#header_container{
+	background:black;
+	position:absolute;
+	text-align:center;
+	height:7%;
+	width:100%;
+	left: 0;
+	top: 0;
+}
+
+
+/* FOOTER */
+
+#footer_container{
+	position: fixed;
+	left:0px;
+	bottom:0px;
+	height:5%;
+	width: 100%;
+	background: black;
+}
+
+
+#copyright_notice{
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+font-size: 0.8em;
+line-height: 40px;
+vertical-align: middle;
+}
+
+/* INFO BOX 
+#infobox {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: white;
+	height: 40%;
+	width: 35%;
+	background-color: rgba(0,0,0, 0.5);
+	margin: 4% auto -5% auto;
+}
+*/
+/* TEXT AREA */
+#problemText{
+	margin: 90px auto auto 50px;
+	border-radius: 1%;
+	border-width:0px;
+}
+
+
+
