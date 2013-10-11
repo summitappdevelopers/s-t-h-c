@@ -81,12 +81,17 @@ All of this code is mine, don't take it...or else.
 		<div id="mainForm">
 			<form id="problem_form" class="problem_form" action="/dispatch"method="post">
 				<textarea id="problemText" placeholder="Explain your problem in detail. Click the black bar on top, for rules!" form="problem_form" rows="15" cols="45" name="problem_text" autofocus required></textarea></br>
-				<input type="text" value="___EMAIL___"placeholder="Enter your email..." name="student_email"></br>
+				<!--<input type="text" value="___EMAIL___"placeholder="Enter your email..." name="student_email"></br>-->
 				<input type="text" placeholder="Your name..." name="student_name" required/></br>
 				<input type="submit" value="Submit!" required/>
 			</form>
 		</div>
+		<p>Submitting as: ___EMAIL___</p> 
 		<!--END MAIN SUBMISSION FORM-->
+		<form action="___LOGOUT_URL___">
+                       <input type="submit" value="Logout!"/>
+		</form>
+		
 	
 	</body>
 
@@ -104,7 +109,9 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
+            #self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()).replace('___LOGOUT_URL___',user.create_logout_url('http://www.s-t-h-c.appspot.com')))
             self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()))
+
         else:
             self.redirect(users.create_login_url(self.request.uri))
             
@@ -113,7 +120,7 @@ class ProblemRedirect(webapp2.RequestHandler):
     def post(self):
 
         #print cgi.escape(self.request.get('problem_text'))
-        
+        user = users.get_current_user()
         self.response.headers['Access-Control-Allow-Origin']='*'
         self.response.headers['Access-Control-Allow-Methods'] = 'POST'
         sender_address ="Summit Tech Help Bot <aramesh.sj@mysummitps.org>"
@@ -121,7 +128,7 @@ class ProblemRedirect(webapp2.RequestHandler):
         subject=""
         problem_text=cgi.escape(self.request.get('problem_text'))
         student_name=cgi.escape(self.request.get('student_name'))
-        student_email=cgi.escape(self.request.get('student_email'))
+        student_email=user.email()
         body= "Hi! Here's a new ticket, good luck!:"+"\n"+"\n"+"Sender: "+student_name+"\n"+"Email: "+student_email+"\n"+"Problem: "+problem_text+"\n"+"\n"+"\n"+"\n"+"This was an automated message, please do not reply to this email. Reply to "+student_email
         mail.send_mail(sender_address, reciever_address, subject, body)     #send mail to Google Group
         confirmationSubject="Ticket Confirmation for "+student_name
