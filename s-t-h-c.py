@@ -88,7 +88,7 @@ All of this code is mine, don't take it...or else.
 		</div>
 		<p>Submitting as: ___EMAIL___</p> 
 		<!--END MAIN SUBMISSION FORM-->
-		<form action="___LOGOUT_URL___">
+		<form action="___LOGOUT_URL___" method="post">
                        <input type="submit" value="Logout!"/>
 		</form>
 		
@@ -109,9 +109,7 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
-            #self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()).replace('___LOGOUT_URL___',user.create_logout_url('http://www.s-t-h-c.appspot.com')))
-            self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()))
-
+            self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()).replace('___LOGOUT_URL___',users.create_logout_url('http://www.s-t-h-c.appspot.com')))
         else:
             self.redirect(users.create_login_url(self.request.uri))
             
