@@ -1,5 +1,5 @@
 import cgi,webapp2
-from google.appengine.api import mail
+from google.appengine.api import mail, oauth, users
 
 MAIN_PAGE_HTML="""\
 <!DOCTYPE html>
@@ -81,7 +81,7 @@ All of this code is mine, don't take it...or else.
 		<div id="mainForm">
 			<form id="problem_form" class="problem_form" action="/dispatch"method="post">
 				<textarea id="problemText" placeholder="Explain your problem in detail. Click the black bar on top, for rules!" form="problem_form" rows="15" cols="45" name="problem_text" autofocus required></textarea></br>
-				<input type="text" placeholder="Enter your email..." name="student_email" required/></br>
+				<input type="text" value="___EMAIL___"placeholder="Enter your email..." name="student_email"></br>
 				<input type="text" placeholder="Your name..." name="student_name" required/></br>
 				<input type="submit" value="Submit!" required/>
 			</form>
@@ -102,9 +102,12 @@ All of this code is mine, don't take it...or else.
 class MainPage(webapp2.RequestHandler):
 
     def get(self):
-        self.response.write(MAIN_PAGE_HTML)
-
-
+        user = users.get_current_user()
+        if user:
+            self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()))
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
+            
 class ProblemRedirect(webapp2.RequestHandler):
 
     def post(self):

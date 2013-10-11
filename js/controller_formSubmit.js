@@ -15,24 +15,14 @@ $('form.problem_form').on('submit',function(){
 			data[name]=value;
 	});
 
+	var submitBool = true;
+
 	if(data.problem_text.length < 10){
 		submitBool = false;
 		Notifier.warning('Add some more detail!','Too $hort.');
 	}
-
-	var submitBool = false;
-	var summitEmailPattern =/^[A-Za-z0-9._-]+@(mysummitps|summitsanjose|gmail)+\.[a-z]{3}$/;
-	var match = data.student_email.match(summitEmailPattern);
-	if(match !== null)
-	{
-		submitBool = true;
-	}
-	else
-	{
-		Notifier.warning('Tried to be funny, punk? Only Summit emails accepted.', 'Bad Email');
-	}
-
-	if(submitBool){	
+	
+	if(submitBool){
 	$.ajax({
 		url: url,
 		type: type,
