@@ -1,6 +1,6 @@
 Summit Tech Help Committee
 ==========================
-STHC is a simple tech support ticketing system running on Google App Engine. Here's the general program flow, to get an idea. 
+[STHC](http://www.s-t-h-c.appspot.com) is a simple tech support ticketing system running on Google App Engine. Here's the general program flow, to get an idea. 
 
 User logs into Google account -> Fills out Ticket -> Ticket is emailed to Google Groups -> Google Groups dispatches ticket to committee members
 
