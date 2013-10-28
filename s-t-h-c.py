@@ -83,7 +83,7 @@ All of this code is mine, don't take it...or else.
 				<textarea id="problemText" placeholder="Explain your problem in detail. Click the black bar on top, for rules!" form="problem_form" rows="15" cols="45" name="problem_text" autofocus required></textarea></br>
 				<!--<input type="text" value="___EMAIL___"placeholder="Enter your email..." name="student_email"></br>-->
 				<input type="text" placeholder="Your name..." name="student_name" required/></br>
-				<input type="submit" value="Submit!" required/>
+				<input id="submitButton" type="submit" value="Submit!" required/>
 			</form>
 		</div>
 		<p>Submitting as: ___EMAIL___</p> 
@@ -97,7 +97,7 @@ All of this code is mine, don't take it...or else.
 
 	<!--START FOOTER-->
 		<div id="footer_container">
-				<span id="copyright_notice">Copyright &#169 2013 by Ajay Ramesh. All rights reserved. pls don't take my code :(</span>
+				<span id="copyright_notice">Copyright &#169 2013 by Ajay Ramesh. <a href="https://github.com/Carpetfizz/s-t-h-c">Fork me on Github!</a></span>
 		</div>
 	<!--END FOOTER-->
 

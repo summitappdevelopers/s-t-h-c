@@ -30,7 +30,7 @@ $('form.problem_form').on('submit',function(){
 		success: function(data,textStatus){
 				Notifier.success('Help will arrive shortly.','Ticket Submitted');
 				if(submitBool){
-				$('input:submit').attr("disabled", true);
+				$('#submitButton').attr("disabled", true);
 				}		
 		},
 		error: function(xhr,textStatus,errorThrown){
