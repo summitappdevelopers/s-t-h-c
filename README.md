@@ -20,8 +20,10 @@ app.yaml
 
     'application: s-t-h-c'
 Change this to the name of your own Appspot instance
+
     - url: /.*
       script: s-t-h-c.application
+      
 Change this to the name of your own Python script, after forking (optional, but keeps things organized)
 
 s-t-h-c.py
@@ -29,6 +31,8 @@ s-t-h-c.py
 
     sender_address ="Summit Tech Help Bot <aramesh.sj@mysummitps.org>"
     reciever_address="Summit Tech Help Google Group <summit-tech-help@googlegroups.com>"
+    
+    
 Change the `sender_address` and `receiver_address` to your own organization. Please, please, please, remember to do this! 
 
 License
