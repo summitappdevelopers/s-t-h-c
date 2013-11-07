@@ -25,6 +25,7 @@ All of this code is mine, don't take it...or else.
 		<script>
 			$(document).ready(function(){
 				$('#infobox').hide();
+				$('#faqbox').hide();
 				$('#infobox').dialog({
 
 						autoOpen: false,
@@ -42,8 +43,28 @@ All of this code is mine, don't take it...or else.
 						width: 500
 
 					});
-				$('#header_container').click(function(){
+				$('#faqbox').dialog({
+
+						autoOpen: false,
+						modal: true,
+						show: {
+							effect: "fade",
+							duration: 200
+						},
+
+						hide: {
+							effect: "fade",
+							duration: 200
+						},
+
+						width: 500
+
+					});
+				$('#header_title').click(function(){
 					$('#infobox').dialog("open");					
+				});
+				$('#faq_button').click(function(){
+                                        $('#faqbox').dialog("open");
 				});
 
 			
@@ -56,7 +77,8 @@ All of this code is mine, don't take it...or else.
 
 	<!--HEADER-->
 	<div id="header_container">
-		<div id="header_title">> Summit Tech Help <</div>
+	        <span id="faq_button">FAQ</span>
+		<span id="header_title">> Summit Tech Help <</span>
 	</div>
 	<!--END HEADER-->
 
@@ -74,6 +96,22 @@ All of this code is mine, don't take it...or else.
 			<li>We need more volunteers. If interested, contact: </li>
 				aramesh.sj@mysummitps.org
 			</ul>
+		</div>
+		<div id="faqbox">
+                        <div id="tagline">FAQ</div>
+                        <p>Please check out some of these tips before sending a ticket!</p>
+                        <p>If you have a suggestion to improve this list, let me know!</p>
+                        <div id="faq_text">
+                        Q: My computer can't connect to the WiFi</br>
+                        A: Settings>Disable WiFi>Enable WiFi. Restart</br>
+                        Q: My trackpad is spazzing out!</br>
+                        A: Settings>Advanced Settings>Reset Browser Settings</br>
+                        Q: Websites aren't loading correctly</br>
+                        A: Settings>Clear browser history>select Cookies and Cache</br>
+                        Q: My internet is slow</br>
+                        A: Tell your friend to stop streaming videos in 1080p</br>
+                        </div>
+                        
 		</div>
 		<!--END JAVASCRIPT HANDLED-->
 
