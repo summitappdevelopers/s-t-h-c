@@ -12,6 +12,7 @@ body {
 	text-align: center;
 	overflow: auto;
 }
+
 /* HEADER */
 
 #header_title{
@@ -54,8 +55,8 @@ body {
 	cursor: pointer;	
 }
 
-#faq_text{
-	text-align:left;
+#faqbox{
+	text-align: left;
 }
 
 

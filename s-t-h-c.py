@@ -100,8 +100,7 @@ All of this code is mine, don't take it...or else.
 		<div id="faqbox">
                         <div id="tagline">FAQ</div>
                         <p>Please check out some of these tips before sending a ticket!</p>
-                        <p>If you have a suggestion to improve this list, let me know!</p></br
-                        <div id="faq_text">
+                        <p>If you have a suggestion to improve this list, let me know!</p>
                         Q: My computer can't connect to the WiFi</br>
                         A: Settings>Disable WiFi>Enable WiFi. Restart</br>
                         Q: My trackpad is spazzing out!</br>
@@ -110,9 +109,7 @@ All of this code is mine, don't take it...or else.
                         A: Settings>Clear browser history>select Cookies and Cache</br>
                         Q: My internet is slow</br>
                         A: Tell your friend to stop streaming videos in 1080p</br>
-                        </div>
-                        
-		</div>
+                </div>
 		<!--END JAVASCRIPT HANDLED-->
 
 		<!--MAIN SUBMISSION FORM-->
