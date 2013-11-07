@@ -100,7 +100,7 @@ All of this code is mine, don't take it...or else.
 		<div id="faqbox">
                         <div id="tagline">FAQ</div>
                         <p>Please check out some of these tips before sending a ticket!</p>
-                        <p>If you have a suggestion to improve this list, let me know!</p>
+                        <p>If you have a suggestion to improve this list, let me know!</p></br
                         <div id="faq_text">
                         Q: My computer can't connect to the WiFi</br>
                         A: Settings>Disable WiFi>Enable WiFi. Restart</br>
