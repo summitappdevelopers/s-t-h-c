@@ -1,0 +1,11 @@
+{
+	"manifest_version":2,
+	"name":"Summit Tech Help",
+	"version":"1.0",
+	"description": "Browser extension for STHC! http://s-t-h-c.appspot.com",
+	"browser_action":{
+		"default_icon":"icon.png",
+		"default_popup":"submission.html",
+		"permissions":["http://s-t-h-c.appspot.com"]
+	}
+}

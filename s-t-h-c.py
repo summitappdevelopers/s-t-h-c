@@ -139,6 +139,30 @@ All of this code is mine, don't take it...or else.
 </html>
 """
 
+EXTENSION_PAGE_HTML="""\
+<html>
+    <head>
+        <link href='/stylesheets/style_home.css' type='text/css' rel='stylesheet'/>
+   	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/notifier.js"></script>
+	<script type="text/javascript" src="/js/controller_formSubmit_ext.js"></script>
+    </head>
+    <body>
+        <a href="http://s-t-h-c.appspot.com" target="_blank"><p>Summit Tech Help</p></a>
+        <div id="mainForm">
+            <form class="problem_form_ext" action="/dispatch"method="post">
+                <textarea id="problemText_ext" placeholder="Explain your problem in detail!" form="problem_form" rows="15" cols="30" name="problem_text" required></textarea></br>
+                    <input type="text" placeholder="Your name..." name="student_name" required/></br>
+                     <input id="submitButton" type="submit" value="Submit!" required/>
+                </form>
+            <p>Submitting as: ___EMAIL___</p>
+        </div>
+    </body>
+     
+</html>
+
+"""
+
 class MainPage(webapp2.RequestHandler):
 
     def get(self):
@@ -147,6 +171,15 @@ class MainPage(webapp2.RequestHandler):
             self.response.write(MAIN_PAGE_HTML.replace('___EMAIL___',user.email()).replace('___LOGOUT_URL___',users.create_logout_url('http://www.s-t-h-c.appspot.com')))
         else:
             self.redirect(users.create_login_url(self.request.uri))
+
+class ExtentionPage(webapp2.RequestHandler):
+
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            self.response.write(EXTENSION_PAGE_HTML.replace('___EMAIL___',user.email()))
+        else:
+            self.response.write("<html><p>Please login to your Google account and reload the extension!</p></html>")
             
 class ProblemRedirect(webapp2.RequestHandler):
 
@@ -173,6 +206,7 @@ class ProblemRedirect(webapp2.RequestHandler):
     
 application = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/crext', ExtentionPage),
     ('/dispatch', ProblemRedirect),
-    
+        
 ], debug=True)
