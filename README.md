@@ -35,6 +35,14 @@ s-t-h-c.py
     
 Change the `sender_address` and `receiver_address` to your own organization. Please, please, please, remember to do this! 
 
+s-t-h-c Google Chrome Extension
+-------------------------------
+
+Now you can simply send support tickets from your browser. 
+
+Documentation coming soon! The current build has some bugs regarding authentication, so its bound to break.
+
+
 License
 -------
 
