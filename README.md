@@ -1,5 +1,3 @@
-We've moved! [sthc2](https://github.com/Carpetfizz/sthc2) will be the home of the new and improved Summit Tech Help webapp!
-
 Summit Tech Help Committee
 ==========================
 [STHC](http://www.s-t-h-c.appspot.com) is a simple tech support ticketing system running on Google App Engine. Here's the general program flow, to get an idea. 
